@@ -1,0 +1,17 @@
+<div style="margin-top=40px">
+  <%= form_with(url: notification_test_send_notification_path) do |form| %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= form.label :user, class: 'form-label' %>
+        <%= form.select( :user, User.all.collect {|q| [ q.name, q.name] },{prompt: "Select User" })%>
+      </div>
+      <div class="col-md-6">
+        <%= form.label :content, class: 'form-label' %>
+        <%= form.text_field :content, class: 'datepicker input' %>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <%= form.submit 'Submit', id: 'submit-button', data: { disable_with: false } %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<p>Profile Information</p>
+<% if current_user.present? %>
+    <p><%= current_user.name %></p>
+    <p><%= current_user.email %></p>    
+<% end %>
+
+<%= link_to "Send Notification", notification_test_index_path, class: "btn btn-su" %>
+
